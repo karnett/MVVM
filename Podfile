@@ -11,6 +11,25 @@ target 'BeerCityCode' do
 
 end
 
+target 'BeerCityCodeTests' do
+	source 'https://github.com/CocoaPods/Specs.git'
+
+	pod 'ObjectMapper', '2.2.1'
+	
+	platform :ios, '10.0'
+
+end
+
+
+target 'BeerCityCodeUITests' do
+	source 'https://github.com/CocoaPods/Specs.git'
+
+	pod 'ObjectMapper', '2.2.1'
+	
+	platform :ios, '10.0'
+
+end
+
 
 
 post_install do |installer|   

@@ -21,9 +21,10 @@ class Address: Mappable {
         mapping(map: map)
     }
     
-    //Init for testing purposes
-    init(street: String, city: String, zipcode: String) {
+    //Init for testing purposes]
+    init(street: String, suite: String, city: String, zipcode: String) {
         self.street = street
+        self.suite = suite
         self.city = city
         self.zipcode = zipcode
     }

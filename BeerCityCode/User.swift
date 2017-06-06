@@ -28,11 +28,14 @@ class User: Mappable {
     
     //Init for testing / Mock Data
     //Only use some data for example only. You can build this out more. Or include helper functions (updateAddress(add), etc)
-    init(userId: Int, name: String, email: String, address: Address) {
+    init(userId: Int, name: String, username: String, address: Address, email: String, phone: String, website: String) {
         self.userId = userId
+        self.username = username
         self.name = name
         self.email = email
         self.address = address
+        self.phone = phone
+        self.website = website
     }
     
     func mapping(map: Map) {
@@ -47,29 +50,3 @@ class User: Mappable {
         company     <- map["company"]
     }
 }
-
-/*
- EXPECTING JSON:
- {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-        "street": "Kulas Light",
-        "suite": "Apt. 556",
-        "city": "Gwenborough",
-        "zipcode": "92998-3874",
-        "geo": {
-            "lat": "-37.3159",
-            "lng": "81.1496"
-        }
-    },
-    "phone": "1-770-736-8031 x56442",
-    "website": "hildegard.org",
-    "company": {
-        "name": "Romaguera-Crona",
-        "catchPhrase": "Multi-layered client-server neural-net",
-        "bs": "harness real-time e-markets"
-    }
- }*/
