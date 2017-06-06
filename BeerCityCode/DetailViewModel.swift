@@ -29,11 +29,10 @@ class DetailViewModel {
     
     func getAddress() -> String {
         let street = user.address?.street ?? ""
-        let suite = user.address?.suite ?? ""
         let city = user.address?.city ?? ""
         let zip = user.address?.zipcode ?? ""
         
-        return "\(street), \(suite)\n\(city) \(zip)"
+        return "\(street)\n\(city) \(zip)"
     }
     
     func getLatitude() -> Double {
