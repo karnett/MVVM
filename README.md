@@ -27,8 +27,8 @@ Available at [SpeakerDeck](https://speakerdeck.com/kimberlyarnett/)
 Shoutout to other publishings that lead me to this architecture and cleaner code. 🙌🏼
 
 *MVVM*
-* [Let's discuss MVVM for iOS @ medium.com] (https://medium.com/@ramshandilya/lets-discuss-mvvm-for-ios-a7960c2f04c7)
-* [Introduction to MVVM @ objc.io] (https://www.objc.io/issues/13-architecture/mvvm/)
+* [Let's discuss MVVM for iOS @ medium.com](https://medium.com/@ramshandilya/lets-discuss-mvvm-for-ios-a7960c2f04c7)
+* [Introduction to MVVM @ objc.io](https://www.objc.io/issues/13-architecture/mvvm/)
 
 
 *Unit Tests*
