@@ -16,6 +16,18 @@ enum NotifyName: String {
     case usersError = "usersError"
 }
 
+func loadRestController() {
+    if isTesting() {
+        restController = MockRestController()
+    }
+}
+
+func isTesting() -> Bool
+{
+    let arguments = ProcessInfo.processInfo.arguments
+    return arguments.contains("UITESTING")
+}
+
 
 //I created a private coocapod with many of these types of functions that I can reuse in every project. 
 //Other examples include date mutations and string/number mutations. 

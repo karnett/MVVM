@@ -13,14 +13,14 @@ class BeerCityCodeUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        let app = XCUIApplication()
+        
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
+        app.launchArguments.append("UITESTING") //send argument to initialize mockdata
+        app.launch()
+        
     }
     
     override func tearDown() {
@@ -28,9 +28,68 @@ class BeerCityCodeUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFlow() {
+        
+        
+        
+        
+        let app = XCUIApplication()
+        app.tables.staticTexts["Elmo"].tap()
+        
+        //Throw in wait for screen transition and object we're expecting to change.
+        self.wait(5.0, object: app.navigationBars["Elmo"])
+        XCTAssertTrue( app.navigationBars["Elmo"].exists, "Navigation bar should have User's name")
+        
+        
+        //assert buttons exist
+        XCTAssertTrue( app.buttons["Email User"].exists, "Email button should exist")
+        XCTAssertTrue( app.buttons["Call User"].exists, "Call button should exist")
+        XCTAssertTrue( app.buttons["Visit User's Website"].exists, "Website button should exist")
+        
+
+        
+        app.buttons["Email User"].tap()
+        //XCTASSERT Action
+        
+        app.buttons["Call User"].tap()
+        //XCTASSERT Action
+        
+        app.buttons["Visit User's Website"].tap()
+        //XCTASSERT Action
+        
+        XCTAssertTrue(app.navigationBars["Elmo"].buttons["Users"].exists, "Back button should say Users")
+        app.navigationBars["Elmo"].buttons["Users"].tap()
+        
+        
+        //Throw in wait for screen transition and object we're expecting to change.
+        self.wait(5.0, object: app.navigationBars["Users"])
+        XCTAssertTrue( app.navigationBars["Users"].exists, "Navigation bar should have User's name")
+        
+        
+        
+    }
+    
+    
+    //HELPER METHODS FOR UNIT TESTING.
+    func wait(_ duration: TimeInterval, object: XCUIElement)
+    {
+        
+        //waits for condition to be met when changing views before continuing tests.
+        _ = self.expectation(
+            for: NSPredicate(format: "exists == 1"),
+            evaluatedWith: object,
+            handler: nil)
+        self.waitForExpectations(timeout: duration, handler: nil)
+    }
+    
+    func wait(_ duration: TimeInterval, object: XCUIElementQuery, count: Int)
+    {
+        //waits for condition to be met when changing views before continuing tests.
+        _ = self.expectation(
+            for: NSPredicate(format: "self.count = \(count)"),
+            evaluatedWith: object,
+            handler: nil)
+        self.waitForExpectations(timeout: duration, handler: nil)
     }
     
 }

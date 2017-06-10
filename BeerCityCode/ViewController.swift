@@ -21,6 +21,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //setup viewModel that contains our logic
+        viewModel = ViewModel.init(restController: restController)
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -30,8 +33,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Doing this to make sure we have heard back from the webservice.
         addNotifications()
         
-        //setup viewModel that contains our logic
-        viewModel = ViewModel.init(restController: restController)
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,13 +62,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func errorOccurred(notification: Notification) {
-        
         if let error = notification.object as? MyError {
-            
-            let alert = UIAlertController.init(title: "Error", message: "\(error.message) - \(error.code)", preferredStyle: .alert)
-            let action = UIAlertAction.init(title: "OK", style: .default, handler: {completed in self.dismiss(animated: true, completion: nil)})
-            alert.addAction(action)
-            self.present(alert, animated: true, completion: {})  
+            self.sendAlert(title: "Error", text: "\(error.message) - \(error.code)")
         }
     }
     

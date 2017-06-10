@@ -10,7 +10,6 @@ import XCTest
 @testable import BeerCityCode
 
 class DetailVMTests: XCTestCase {
-    let rest = MockRestController()
     let user: User = MockData.users[0]
     var viewModel: DetailViewModel!
     

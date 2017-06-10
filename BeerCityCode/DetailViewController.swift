@@ -39,8 +39,11 @@ class DetailViewController: UIViewController {
         self.usernameLabel.text = self.viewModel.getUsername()
         
         self.emailBtn.setTitle(self.viewModel.getEmail(), for: .normal)
+        self.emailBtn.accessibilityLabel = "Email User" //not logic, so it's here.
         self.phoneBtn.setTitle(self.viewModel.getPhone(), for: .normal)
+        self.phoneBtn.accessibilityLabel = "Call User"
         self.websiteBtn.setTitle(self.viewModel.getWebsite(), for: .normal)
+        self.websiteBtn.accessibilityLabel = "Visit User's Website"
         
         self.addressLabel.text = self.viewModel.getAddress()
         
