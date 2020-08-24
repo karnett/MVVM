@@ -40,3 +40,5 @@ Shoutout to other publishings that lead me to this architecture and cleaner code
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+[![Xcode Version](https://img.shields.io/badge/Xcode-11.3.1-blue)](https://download.developer.apple.com/Developer_Tools/Xcode_11.3.1/Xcode_11.3.1.xip)
