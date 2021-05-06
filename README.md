@@ -10,7 +10,7 @@ Updated April 2021 for Underdog Devs.
 
 ## Authors
 
-* **Kim Arnett** - [@kaydacode](http://www.twitter.com/kaydadcode)
+* **Kim Arnett** - [@kaydacode](http://www.twitter.com/kaydacode)
 
 ## Credit / Inspiration
 
