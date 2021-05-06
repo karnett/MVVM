@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3B7FBD2644151F00982A2C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3B7FBC2644151F00982A2C /* Network.swift */; };
 		DE7316A82634904100047D0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7316A72634904100047D0E /* AppDelegate.swift */; };
 		DE7316AA2634904100047D0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7316A92634904100047D0E /* SceneDelegate.swift */; };
 		DE7316AC2634904100047D0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7316AB2634904100047D0E /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE3B7FBC2644151F00982A2C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		DE7316A42634904100047D0E /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7316A72634904100047D0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7316A92634904100047D0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				DE7316AB2634904100047D0E /* ViewController.swift */,
 				DE7316DA2634918000047D0E /* ViewModel.swift */,
 				DE91F3D9263CD4F0008B9F97 /* ViewModelTests.swift */,
+				DE3B7FBC2644151F00982A2C /* Network.swift */,
 				DE7316DF2634AF3500047D0E /* Todo.swift */,
 				DE7316AD2634904100047D0E /* Main.storyboard */,
 				DE7316B02634904200047D0E /* Assets.xcassets */,
@@ -269,6 +272,7 @@
 			files = (
 				DE7316AC2634904100047D0E /* ViewController.swift in Sources */,
 				DE7316A82634904100047D0E /* AppDelegate.swift in Sources */,
+				DE3B7FBD2644151F00982A2C /* Network.swift in Sources */,
 				DE7316DB2634918000047D0E /* ViewModel.swift in Sources */,
 				DE7316AA2634904100047D0E /* SceneDelegate.swift in Sources */,
 				DE7316E02634AF3500047D0E /* Todo.swift in Sources */,

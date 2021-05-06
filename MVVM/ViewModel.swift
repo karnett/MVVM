@@ -33,10 +33,7 @@ class ViewModel {
 
     private func fetchData() {
         network?.request(url: "https://jsonplaceholder.typicode.com/todos", completion: { (data, error) in
-            if let data = data {
-                self.todoList = try? JSONDecoder().decode([Todo].self, from: data)
-            }
-
+            self.todoList = data
             self.error = error
             self.delegate?.refresh()
         })

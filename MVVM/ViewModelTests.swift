@@ -13,7 +13,7 @@ class ViewModelTests: XCTestCase {
     func testViewModel() {
 
         let data = [Todo(userId: 1, id: 1, title: "My Todo Item", completed: false)]
-        let mockNetwork = MockNetwork(data: try? JSONEncoder().encode(data), error: nil)
+        let mockNetwork = MockNetwork(data: data, error: nil)
 
         let viewModel = ViewModel(delegate: nil, network: mockNetwork)
         XCTAssertEqual(viewModel.getNumberOfRows(), 1)
@@ -23,15 +23,15 @@ class ViewModelTests: XCTestCase {
 
 
 class MockNetwork: Network {
-    let dataToReturn: Data?
+    let dataToReturn: [Todo]?
     let errorToReturn: Error?
 
-    init(data: Data? = nil, error: Error? = nil) {
+    init(data: [Todo]? = nil, error: Error? = nil) {
         self.dataToReturn = data
         self.errorToReturn = error
     }
 
-    func request(url: String, completion: @escaping (Data?, Error?) -> ()) {
+    func request(url: String, completion: @escaping ([Todo]?, Error?) -> ()) {
         completion(dataToReturn, errorToReturn)
     }
 }
